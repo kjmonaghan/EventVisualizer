@@ -1,0 +1,3 @@
+SELECT click_count
+FROM demo.demographics, click.click_count
+WHERE demo.demographics.personid = click.click_count.personid AND click_count > 0

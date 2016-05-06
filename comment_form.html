@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html>
+<script type="text/javascript">function Redirect(){ var comment = document.forms["comment_form"]["comment"].value; if (comment == ""){alert("You have left a required field blank!");} else {window.location="comment.php";}}</script>
+<head><title>KU EECS 448 Login</title></head>
+<body style="background-color:lightgrey">
+<form name="comment_form" action="comment.php" method="post">Comment: <input type="text" name="comment"/><br><input type="submit" value="Submit" onclick="Redirect();"/>
+</form>
+</body>
+
+</html>

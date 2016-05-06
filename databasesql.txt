@@ -1,0 +1,5 @@
+
+
+CREATE TABLE `eventvisualizer`.`users` ( `id` INT(7) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(20) NOT NULL , `name` VARCHAR(40) NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `eventvisualizer`.`events` ( `eventId` INT(7) NOT NULL , `userId` INT(7) NOT NULL , `name` VARCHAR(60) NOT NULL , `startingTime` DATETIME NOT NULL , `endingTime` DATETIME NOT NULL , `description` VARCHAR(200) NOT NULL , `xCoordinate` DECIMAL(20) NOT NULL , `yCoordinate` DECIMAL(20) NOT NULL , `marker` INT(7) NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `eventvisualizer`.`comments` ( `eventId` INT(7) NOT NULL , `userId` INT(7) NOT NULL , `timeStamp` DATETIME NOT NULL , `comment` VARCHAR(140) NOT NULL ) ENGINE = InnoDB;

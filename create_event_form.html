@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<script type="text/javascript">
+function Redirect(){
+
+	var title = document.forms["create_event"]["title"].value;
+	var description = document.forms["create_event"]["desc"].value;
+	var fromMonthListIndex = document.create_event.fromMonthList.selectedIndex;
+	var fromMonthListValue = document.create_event.fromMonthList.options[fromMonthListIndex].value;
+	var fromDayListIndex = document.create_event.fromDayList.selectedIndex;
+	var fromDayListValue = document.create_event.fromDayList.options[fromDayListIndex].value;
+	var fromTimeListIndex = document.create_event.fromTimeList.selectedIndex;
+	var fromTimeListValue = document.create_event.fromTimeList.options[fromTimeListIndex].value;
+	var toMonthListIndex = document.create_event.toMonthList.selectedIndex;
+	var toMonthListValue = document.create_event.toMonthList.options[toMonthListIndex].value;
+	var toDayListIndex = document.create_event.toDayList.selectedIndex;
+	var toDayListValue = document.create_event.toDayList.options[toDayListIndex].value;
+	var toTimeListIndex = document.create_event.toTimeList.selectedIndex;
+	var toTimeListValue = document.create_event.toTimeList.options[toTimeListIndex].value;
+	var categoryIndex = document.create_event.category.selectedIndex;
+	var categoryValue = document.create_event.category.options[categoryIndex].value;
+	
+	if (title == "" || description == "" || fromMonthListValue == '0' || fromDayListValue == '0' || fromTimeListValue == '0000' ||
+			toMonthListValue == '0' || toDayListValue == '0' || toTimeListValue == '0000' || categoryValue == '0' ||
+			!(document.create_event.AMFromRadioGroup.checked || document.create_event.PMFromRadioGroup.checked) ||
+			!(document.create_event.AMToRadioGroup.checked || document.create_event.PMToRadioGroup.checked))
+	{
+		alert("You have left a required field blank!")
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+</script>
+<body style="background-color:lightgrey">
+<h1>Create Event Form</h1>
+<form name="create_event" action="create_event_form.php" onsubmit="return Redirect()" method="post">
+*Title: <input type="text" name="title"><br>
+*Time Frame: From	<select name="fromMonthList" id="fromMonthList">
+							<option value="0">Month</option>
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+					</select>
+					/
+					<select name="fromDayList" id="fromDayList">
+							<option value="0">Day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+					</select>
+					@
+					<select name="fromTimeList" id="fromTimeList">
+							<option value="0000">Time</option>
+							<option value="1200">12:00</option>
+							<option value="1230">12:30</option>
+							<option value="100">1:00</option>
+							<option value="130">1:30</option>
+							<option value="200">2:00</option>
+							<option value="230">2:30</option>
+							<option value="300">3:00</option>
+							<option value="330">3:30</option>
+							<option value="400">4:00</option>
+							<option value="430">4:30</option>
+							<option value="500">5:00</option>
+							<option value="530">5:30</option>
+							<option value="600">6:00</option>
+							<option value="630">6:30</option>
+							<option value="700">7:00</option>
+							<option value="730">7:30</option>
+							<option value="800">8:00</option>
+							<option value="830">8:30</option>
+							<option value="900">9:00</option>
+							<option value="930">9:30</option>
+							<option value="1000">10:00</option>
+							<option value="1030">10:30</option>
+							<option value="1100">11:00</option>
+							<option value="1130">11:30</option>
+					</select>
+					<label>AM
+					<input type="radio" name="fromRadioGroup" id="AMFromRadioGroup" value="AM">
+					</label>
+					<label>PM
+					<input type="radio" name="fromRadioGroup" id="PMFromRadioGroup" value="PM">
+					</label>
+			<br>
+			To		<select name="toMonthList" id="toMonthList">
+							<option value="0">Month</option>
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+					</select>
+					/
+					<select name="toDayList" id="toDayList">
+							<option value="0">Day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+					</select>
+					@
+					<select name="toTimeList" id="toTimeList">
+							<option value="0000">Time</option>
+							<option value="1200">12:00</option>
+							<option value="1230">12:30</option>
+							<option value="100">1:00</option>
+							<option value="130">1:30</option>
+							<option value="200">2:00</option>
+							<option value="230">2:30</option>
+							<option value="300">3:00</option>
+							<option value="330">3:30</option>
+							<option value="400">4:00</option>
+							<option value="430">4:30</option>
+							<option value="500">5:00</option>
+							<option value="530">5:30</option>
+							<option value="600">6:00</option>
+							<option value="630">6:30</option>
+							<option value="700">7:00</option>
+							<option value="730">7:30</option>
+							<option value="800">8:00</option>
+							<option value="830">8:30</option>
+							<option value="900">9:00</option>
+							<option value="930">9:30</option>
+							<option value="1000">10:00</option>
+							<option value="1030">10:30</option>
+							<option value="1100">11:00</option>
+							<option value="1130">11:30</option>
+					</select>
+					<label>AM
+					<input type="radio" name="toRadioGroup" id="AMToRadioGroup" value="AM">
+					</label>
+					<label>PM
+					<input type="radio" name="toRadioGroup" id="PMToRadioGroup" value="PM">
+					</label>
+<br>
+Specific Location: <input type="text" name="spcfc_loc"><br>
+*Description: <input type="text" name="desc"><br>
+*Category: 			<select name="category" id="category">
+						<option value="0">Category</option>
+						<option value="1">KU Event</option>
+						<option value="2">Personal</option>
+						<option value="3">Study Group</option>
+						<option value="4">Sports</option>
+						<option value="5">Community</option>
+						<option value="6">Other</option>
+					</select>
+<br>
+<p>* -- required fields</p>
+<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>KU EECS 448 Login</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <style>
+#login
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 25px;
+	background: #00b2b3;
+	padding-top: 40px;
+	padding-left: 75px;
+    width: 500px;
+    height: 400px; 
+	margin: auto;
+	
+}
+#reg_button
+{
+	margin-left: 120px;
+}
+#h1
+{
+	margin-left: -45px;
+	padding-bottom: 20px;
+	font-size: 50px;
+}
+#username
+{
+	width: 350px;
+}
+#password
+{
+	width: 350px;
+}
+hr { 
+    margin-top: -2.25em;
+    margin-bottom: 1.0em;
+    margin-left: -40px;
+	margin-right: 30px;
+    border-style: inset;
+    border-width: 1px;
+	border-color: gray;
+} 
+.inset-text {
+    color: rgba(0,0,153, 0.9);
+    text-shadow: 1px 6px 8px #def, 0 0 0 #000, 1px 4px 6px #000;
+}
+</style>
+</head>
+<script type="text/javascript">
+function Redirect(){
+	
+	var username = document.forms["login_form"]["username"].value;
+	var password = document.forms["login_form"]["password"].value;
+	
+	if (username == "" || password == "")
+	{
+		alert("You have left a field blank!")
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+	
+}
+
+function Register() {
+	
+	window.location="signup_form.html";
+}
+</script>
+<div id="login">
+<h1 id="h1" class="inset-text">KU Event Visualizer</h1><hr>
+<body>
+<form name="login_form" action="login.php" onsubmit="return Redirect()" method="post">
+Username: <input type="text" id="username" name="username" class="form-control"><br><br>
+Password: <input type="password" id="password" name="password" class="form-control"><br><br>
+<input type="submit" value="Login" class="btn">
+<input type="button" id="reg_button" class="btn" value="Register New Account" onclick="Register()">
+</form>
+</body>
+</div>
+</html>
+
+
+
